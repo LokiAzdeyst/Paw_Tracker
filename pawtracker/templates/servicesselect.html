@@ -1,0 +1,28 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h3>{{ title }}</h3>
+        <form name="ServicesFormSelect" action="" method="post">
+            {{ form.hidden_tag() }}
+
+            <datalist class="droplist">
+                {% for id in services.service_Name %}
+                <option value="id">id</option>
+                {% endfor %}
+            </datalist>
+            <p>
+                {{form.service_Name.label}}<br />
+                {{form.service_Name()}}
+            </p>
+            <p>
+                {{form.submit()}}
+            </p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

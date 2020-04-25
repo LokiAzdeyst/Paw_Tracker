@@ -1,0 +1,34 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+{% for vetinfo in vet %}
+    <p>
+        {{form.vet_First_Name.label}}: {{vetinfo.vet_First_Name}}
+    </p>
+    <p>
+        {{form.vet_Last_Name.label}}: {{vetinfo.vet_Last_Name}}
+    </p>
+    <p>
+        {{form.vet_Street_Address.label}}: {{vetinfo.vet_Street_Address}}<br />
+        {{form.vet_City.label}}: {{vetinfo.vet_City}}<br />
+        {{form.vet_State.label}}: {{vetinfo.vet_State}}<br />
+        {{form.vet_Zipcode.label}}: {{vetinfo.vet_Zipcode}}
+    </p>
+        
+
+<p>
+    {{form.vet_EmailAddress.label}}: {{vetinfo.vet_EmailAddress}}<br />
+    {{form.vet_Phone.label}}: {{vetinfo.vet_Phone}}
+</p>
+<br />
+<br />
+{% endfor %}
+{% if session['user_id'] %}
+<p>
+    <a href="{{ url_for('add_Vet') }}" class="service_button">Add New vet</a>
+    <a href="{{ url_for('delete_Vet') }}" class="service_button">Delete a vet</a>
+    <a href="{{ url_for('select_Vet') }}" class="service_button">Edit a vet</a>
+</p>
+{% endif %}
+{% endblock %}

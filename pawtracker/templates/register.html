@@ -1,0 +1,41 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<h2>{{ title }}</h2>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h3></h3>
+        <form name="login" action="" method="post">
+            {{ form.hidden_tag() }}
+
+            <p>
+                {{form.email.label}}<br />
+                {{form.email()}}<br />
+            </p>
+            <p>
+                {{form.password.label}}<br />
+                {{form.password()}}<br />
+            </p>
+            <p>
+                {{form.password_confirm.label}}<br />
+                {{form.password_confirm()}}<br />
+            </p>
+            <p>
+                {{form.first_Name.label}}<br />
+                {{form.first_Name()}}
+            </p>
+            <p>
+                {{form.last_Name.label}}<br />
+                {{form.last_Name()}}<br />
+            </p>
+            <p>
+                {{form.phone.label}}<br />
+                {{form.phone()}}<br />
+            </p>
+            <p>
+                {{form.submit()}}
+            </p>
+        </form>
+    </div>
+</div>
+{% endblock %}

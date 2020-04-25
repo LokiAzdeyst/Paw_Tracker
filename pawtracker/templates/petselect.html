@@ -1,0 +1,28 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h3>{{ title }}</h3>
+        <form name="PetFormSelect" action="" method="post">
+            {{ form.hidden_tag() }}
+
+            <datalist class="droplist">
+                {% for id in pet.pet_First_Name %}
+                <option value="id">id</option>
+                {% endfor %}
+            </datalist>
+            <p>
+                {{form.pet_First_Name.label}}<br />
+                {{form.pet_First_Name()}}
+            </p>
+            <p>
+                {{form.submit()}}
+            </p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

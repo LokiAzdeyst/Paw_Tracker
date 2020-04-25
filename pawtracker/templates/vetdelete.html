@@ -1,0 +1,56 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h3>{{ title }}</h3>
+        <form name="ServicesFormDelete" action="" method="post">
+            {{ form.hidden_tag() }}
+
+            <datalist class="dropbtn" onclick="">
+                {% for id in vet.vet_Last_Name %}
+                <option value="id">id</option>
+                {% endfor %}
+            </datalist>
+            <p>
+                {{form.vet_First_Name.label}}<br />
+                {{form.vet_First_Name()}}
+            </p>
+            <p>
+                {{form.vet_Last_Name.label}}<br />
+                {{form.vet_Last_Name()}}
+            </p>
+            <p>
+                {{form.vet_Street_Address.label}}<br />
+                {{form.vet_Street_Address()}}
+            </p>
+            <p>
+                {{form.vet_City.label}}<br />
+                {{form.vet_City()}}
+            </p>
+            <p>
+                {{form.vet_State.label}}<br />
+                {{form.vet_State()}}
+            </p>
+            <p>
+                {{form.vet_Zipcode.label}}<br />
+                {{form.vet_Zipcode()}}
+            </p>
+            <p>
+                {{form.vet_EmailAddress.label}}
+                {{form.vet_EmailAddress()}}
+            </p>
+            <p>
+                {{form.vet_Phone.label}}
+                {{form.vet_Phone()}}
+            </p>
+            <p>
+                {{form.submit()}}
+            </p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

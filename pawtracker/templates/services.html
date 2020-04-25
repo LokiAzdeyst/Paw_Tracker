@@ -1,0 +1,34 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+{% for service in services %}
+<p>
+    {{service.service_Name}}
+</p>
+<p>
+    {{service.service_Description}}
+</p>
+<th>
+    <td>
+        {{service.service_Length}}
+    </td>
+    <td>
+        {{service.service_Diration}}
+    </td>
+    <td>
+        {{service.service_Single_Price}}
+    </td>
+    <td>
+        {{service.service_Group_Price}}
+    </td>
+</th><br/><br />
+{% endfor %}
+{% if session['user_id'] %}
+          <p>
+              <a href="{{ url_for('add_Service') }}" class="service_button">Add New Service</a>
+              <a href="{{ url_for('delete_Service') }}" class="service_button">Delete a Service</a>
+              <a href="{{ url_for('select_Service') }}" class="service_button">Edit a Service</a>
+          </p>
+{% endif %}
+{% endblock %}

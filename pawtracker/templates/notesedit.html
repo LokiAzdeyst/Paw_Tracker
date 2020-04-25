@@ -1,0 +1,27 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h3>{{ title }}</h3>
+        <form name="PetFormEdit" action="" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{form.pet_First_Name.label}}<br />
+                {{form.pet_First_Name()}}
+            </p>
+
+            <p>
+                {{form.note_Notes.label}}<br />
+                {{form.note_Notes()}}
+            </p>
+            <p>
+                {{form.submit()}}
+            </p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

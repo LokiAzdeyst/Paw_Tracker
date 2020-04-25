@@ -1,0 +1,42 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h3>{{ title }}</h3>
+        <form name="ServicesFormEdit" action="" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{form.service_Name.label}}<br />
+                {{form.service_Name()}}
+            </p>
+            <p>
+                {{form.service_Description.label}}<br />
+                {{form.service_Description()}}
+            </p>
+            <p>
+                {{form.service_Length.label}}<br />
+                {{form.service_Length()}}
+            </p>
+            <p>
+                {{form.service_Diration.label}}<br />
+                {{form.service_Diration()}}
+            </p>
+            <p>
+                {{form.service_Single_Price.label}}<br />
+                {{form.service_Single_Price()}}
+            </p>
+            <p>
+                {{form.service_Group_Price.label}}<br />
+                {{form.service_Group_Price()}}
+            </p>
+            <p>
+                {{form.submit()}}
+            </p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

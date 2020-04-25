@@ -1,0 +1,29 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+{% for pet in pet %}
+<p>
+    {{form.pet_First_Name.label}}: {{pet.pet_First_Name}}
+</p>
+<p>
+    {{form.pet_Last_Name.label}}: {{pet.pet_Last_Name}}
+</p>
+<p>
+    {{form.pet_Breed.label}}: {{pet.pet_Breed}}<br />
+    {{form.pet_Gender.label}}: {{pet.pet_Gender}}<br />
+    {{form.pet_Age.label}}: {{pet.pet_Age}}<br />
+    {{form.pet_Picture.label}}: {{pet.pet_Picture}}
+</p>
+
+<br />
+<br />
+{% endfor %}
+{% if session['user_id'] %}
+<p>
+    <a href="{{ url_for('add_Pet') }}" class="service_button">Add New pet</a>
+    <a href="{{ url_for('delete_Pet') }}" class="service_button">Delete a pet</a>
+    <a href="{{ url_for('select_Pet') }}" class="service_button">Edit a pet</a>
+</p>
+{% endif %}
+{% endblock %}
